@@ -1,0 +1,58 @@
+document
+  prefix task_type <https://bacardi.dlr.de/prov/ns/task/type/#>
+  prefix task_role <https://bacardi.dlr.de/prov/ns/task/role/#>
+  prefix task_attr <https://bacardi.dlr.de/prov/ns/task/attribute/#>
+  prefix agent <https://bacardi.dlr.de/prov/agent/>
+  prefix task_bundle <https://bacardi.dlr.de/prov/entity/TaskBundle/>
+  prefix task <https://bacardi.dlr.de/prov/activity/Task/>
+  prefix task_config <https://bacardi.dlr.de/prov/entity/TaskConfiguration/>
+  prefix task_log <https://bacardi.dlr.de/prov/entity/TaskLog/>
+  prefix input <https://bacardi.dlr.de/prov/entity/Input/>
+  prefix output <https://bacardi.dlr.de/prov/entity/Output/>
+  prefix db_entry <https://bacardi.dlr.de/prov/entity/DbEntry/>
+  prefix product <https://bacardi.dlr.de/prov/entity/Product/>
+  
+  agent(agent:BACARDI, [prov:type="SoftwareAgent"])
+  agent(agent:GSOC, [prov:type="Organization"])
+  agent(agent:SPACE-TRACK, [prov:type="Organization"])
+  wasInformedBy(task:1, task:0)
+  bundle task_bundle:1
+    entity(input:1, [prov:type='prov:collection', prov:type="task_type:Input"])
+    entity(output:1, [prov:type='prov:collection', prov:type="task_type:Output"])
+    entity(task_config:1, [prov:type="task_type:TaskConfiguration"])
+    entity(task_log:1, [prov:type="task_type:TaskLog"])
+    entity(db_entry:1, [prov:type="task_type:DbEntry"])
+    entity(db_entry:2, [prov:type="task_type:DbEntry"])
+    entity(product:1, [prov:type="task_type:Product"])
+    entity(product:2, [prov:type="task_type:Product"])
+    activity(task:1, -, -, [prov:type="task_type:Task"])
+    wasAssociatedWith(task:1, agent:BACARDI, -)
+    wasAttributedTo(product:1, agent:SPACE-TRACK)
+    wasAttributedTo(product:2, agent:GSOC)
+    wasAttributedTo(task_config:1, agent:BACARDI)
+    wasAttributedTo(db_entry:1, agent:BACARDI)
+    wasAttributedTo(db_entry:2, agent:BACARDI)
+    wasAttributedTo(task_log:1, agent:BACARDI)
+    wasAttributedTo(input:1, agent:BACARDI)
+    wasAttributedTo(output:1, agent:BACARDI)
+    used(task:1, input:1, -)
+    wasGeneratedBy(output:1, task:1, -)
+    hadMember(input:1, product:1)
+    hadMember(input:1, db_entry:1)
+    hadMember(input:1, task_config:1)
+    hadMember(output:1, task_log:1)
+    hadMember(output:1, db_entry:2)
+    hadMember(output:1, product:2)
+    used(task:1, db_entry:1, -)
+    used(task:1, task_config:1, -)
+    used(task:1, product:1, -)
+    wasGeneratedBy(task_log:1, task:1, -)
+    wasGeneratedBy(db_entry:2, task:1, -)
+    wasGeneratedBy(product:2, task:1, -)
+    wasDerivedFrom(db_entry:2, db_entry:1, -, -, -)
+    wasEndedBy(task:1, db_entry:1, -, -)
+  endBundle
+  bundle task_bundle:2
+    activity(task:0, -, -, [prov:type="task_type:Task"])
+  endBundle
+endDocument

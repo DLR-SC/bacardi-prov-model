@@ -1,0 +1,50 @@
+cff-version: 1.2.0
+title: BACARDI PROV Models
+message: >-
+  If you use the BACARDI PROV model in your research,
+  please cite it using these metadata.
+abstract: >
+  A reference implementation for the BACARDI PROV models.
+type: software
+authors:
+  - given-names: Martin
+    family-names: Stoffers
+    email: martin.stoffers@dlr.de
+    affiliation: German Aerospace Center (DLR)
+    orcid: "https://orcid.org/0000-0003-2987-4345"
+identifiers:
+  - type: doi
+    value: "https://github.com/DLR-SC/bacardi-prov-model"
+repository-code: "https://github.com/DLR-SC/bacardi-prov-model"
+references:
+  - authors:
+    - given-names: Martin
+      family-names: Stoffers
+      email: martin.stoffers@dlr.de
+      affiliation: German Aerospace Center (DLR)
+      orcid: "https://orcid.org/0000-0003-2987-4345"
+    - given-names: Michael
+      family-names: Meinel
+      email: michael.meinel@dlr.de
+      affiliation: German Aerospace Center (DLR)
+      orcid: "https://orcid.org/0000-0001-6372-3853"
+    - given-names: Benjamin
+      family-names: Hofmann
+      email: benjamin.hofmann@dlr.de
+      affiliation: German Aerospace Center (DLR)
+    - family-names: Schreiber
+      given-names: Andreas
+      affiliation: "German Aerospace Center (DLR)"
+      orcid: "https://orcid.org/0000-0001-5750-5649"
+    title: "Integrating Provenance-Awareness into the Space Debris Processing System BACARDI"
+    type: conference-paper
+    conference:
+      name: "2022 IEEE Aerospace Conference (AERO)"
+    year: 2022
+    pages: "1-12"
+    doi: 10.5281/zenodo.ID
+keywords:
+  - provenance
+  - w3c-prov
+  - provenance model
+license: MIT

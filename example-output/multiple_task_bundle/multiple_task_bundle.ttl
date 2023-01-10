@@ -1,0 +1,86 @@
+@prefix agent: <https://bacardi.dlr.de/prov/agent/> .
+@prefix ns1: <https://bacardi.dlr.de/prov/entity/TaskBundle/> .
+@prefix prov: <http://www.w3.org/ns/prov#> .
+@prefix task: <https://bacardi.dlr.de/prov/activity/Task/> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+ns1:2 {
+    <https://bacardi.dlr.de/prov/entity/Output/2> a prov:Entity,
+            prov:collection,
+            "task_type:Output"^^xsd:string ;
+        prov:hadMember <https://bacardi.dlr.de/prov/entity/Product/2>,
+            <https://bacardi.dlr.de/prov/entity/TaskLog/2> ;
+        prov:wasGeneratedBy <https://bacardi.dlr.de/prov/activity/Task/2> .
+
+    <https://bacardi.dlr.de/prov/activity/Task/2> a prov:Activity,
+            "task_type:Task"^^xsd:string ;
+        prov:used <https://bacardi.dlr.de/prov/entity/Input/2> .
+
+    <https://bacardi.dlr.de/prov/entity/Input/2> a prov:Entity,
+            prov:collection,
+            "task_type:Input"^^xsd:string ;
+        prov:hadMember <https://bacardi.dlr.de/prov/entity/DbEntry/1>,
+            <https://bacardi.dlr.de/prov/entity/TaskConfiguration/2> .
+
+    <https://bacardi.dlr.de/prov/entity/Product/2> a prov:Entity,
+            "task_type:Product"^^xsd:string ;
+        prov:wasAttributedTo <https://bacardi.dlr.de/prov/agent/GSOC> .
+
+    <https://bacardi.dlr.de/prov/entity/TaskConfiguration/2> a prov:Entity,
+            "task_type:TaskConfiguration"^^xsd:string .
+
+    <https://bacardi.dlr.de/prov/entity/TaskLog/2> a prov:Entity,
+            "task_type:TaskLog"^^xsd:string .
+}
+
+ns1:1 {
+    <https://bacardi.dlr.de/prov/entity/Output/1> a prov:Entity,
+            prov:collection,
+            "task_type:Output"^^xsd:string ;
+        prov:hadMember <https://bacardi.dlr.de/prov/entity/DbEntry/1>,
+            <https://bacardi.dlr.de/prov/entity/DbEntry/2>,
+            <https://bacardi.dlr.de/prov/entity/TaskLog/1> ;
+        prov:wasGeneratedBy <https://bacardi.dlr.de/prov/activity/Task/1> .
+
+    <https://bacardi.dlr.de/prov/activity/Task/1> a prov:Activity,
+            "task_type:Task"^^xsd:string ;
+        prov:used <https://bacardi.dlr.de/prov/entity/Input/1> ;
+        prov:wasAssociatedWith <https://bacardi.dlr.de/prov/agent/BACARDI> .
+
+    <https://bacardi.dlr.de/prov/entity/DbEntry/1> a prov:Entity,
+            "task_type:DbEntry"^^xsd:string .
+
+    <https://bacardi.dlr.de/prov/entity/DbEntry/2> a prov:Entity,
+            "task_type:DbEntry"^^xsd:string .
+
+    <https://bacardi.dlr.de/prov/entity/Input/1> a prov:Entity,
+            prov:collection,
+            "task_type:Input"^^xsd:string ;
+        prov:hadMember <https://bacardi.dlr.de/prov/entity/Product/1>,
+            <https://bacardi.dlr.de/prov/entity/TaskConfiguration/1> .
+
+    <https://bacardi.dlr.de/prov/entity/Product/1> a prov:Entity,
+            "task_type:Product"^^xsd:string ;
+        prov:wasAttributedTo <https://bacardi.dlr.de/prov/agent/SPACE-TRACK> .
+
+    <https://bacardi.dlr.de/prov/entity/TaskConfiguration/1> a prov:Entity,
+            "task_type:TaskConfiguration"^^xsd:string .
+
+    <https://bacardi.dlr.de/prov/entity/TaskLog/1> a prov:Entity,
+            "task_type:TaskLog"^^xsd:string .
+}
+
+{
+    task:2 prov:wasAssociatedWith agent:BACARDI ;
+        prov:wasInformedBy task:1 .
+
+    agent:GSOC a prov:Agent,
+            "Organization"^^xsd:string .
+
+    agent:SPACE-TRACK a prov:Agent,
+            "Organization"^^xsd:string .
+
+    agent:BACARDI a prov:Agent,
+            "SoftwareAgent"^^xsd:string .
+}
+

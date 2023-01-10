@@ -1,0 +1,128 @@
+{
+  "prefix": {
+    "task_type": "https://bacardi.dlr.de/prov/ns/task/type/#",
+    "task_role": "https://bacardi.dlr.de/prov/ns/task/role/#",
+    "task_attr": "https://bacardi.dlr.de/prov/ns/task/attribute/#",
+    "agent": "https://bacardi.dlr.de/prov/agent/",
+    "task_bundle": "https://bacardi.dlr.de/prov/entity/TaskBundle/",
+    "task": "https://bacardi.dlr.de/prov/activity/Task/",
+    "task_config": "https://bacardi.dlr.de/prov/entity/TaskConfiguration/",
+    "task_log": "https://bacardi.dlr.de/prov/entity/TaskLog/",
+    "input": "https://bacardi.dlr.de/prov/entity/Input/",
+    "output": "https://bacardi.dlr.de/prov/entity/Output/",
+    "db_entry": "https://bacardi.dlr.de/prov/entity/DbEntry/",
+    "product": "https://bacardi.dlr.de/prov/entity/Product/"
+  },
+  "agent": {
+    "agent:BACARDI": {
+      "prov:type": "SoftwareAgent"
+    },
+    "agent:GSOC": {
+      "prov:type": "Organization"
+    },
+    "agent:SPACE-TRACK": {
+      "prov:type": "Organization"
+    }
+  },
+  "bundle": {
+    "task_bundle:1": {
+      "entity": {
+        "input:1": {
+          "prov:type": [
+            "task_type:Input",
+            {
+              "$": "prov:collection",
+              "type": "prov:QUALIFIED_NAME"
+            }
+          ]
+        },
+        "output:1": {
+          "prov:type": [
+            "task_type:Output",
+            {
+              "$": "prov:collection",
+              "type": "prov:QUALIFIED_NAME"
+            }
+          ]
+        },
+        "task_config:1": {
+          "prov:type": "task_type:TaskConfiguration"
+        },
+        "task_log:1": {
+          "prov:type": "task_type:TaskLog"
+        },
+        "db_entry:1": {
+          "prov:type": "task_type:DbEntry"
+        },
+        "db_entry:2": {
+          "prov:type": "task_type:DbEntry"
+        },
+        "product:1": {
+          "prov:type": "task_type:Product"
+        },
+        "product:2": {
+          "prov:type": "task_type:Product"
+        }
+      },
+      "activity": {
+        "task:1": {
+          "prov:type": "task_type:Task"
+        }
+      },
+      "wasAssociatedWith": {
+        "_:id1": {
+          "prov:activity": "task:1",
+          "prov:agent": "agent:BACARDI"
+        }
+      },
+      "wasAttributedTo": {
+        "_:id2": {
+          "prov:entity": "product:1",
+          "prov:agent": "agent:SPACE-TRACK"
+        },
+        "_:id3": {
+          "prov:entity": "product:2",
+          "prov:agent": "agent:GSOC"
+        }
+      },
+      "hadMember": {
+        "_:id4": {
+          "prov:collection": "input:1",
+          "prov:entity": "product:1"
+        },
+        "_:id5": {
+          "prov:collection": "input:1",
+          "prov:entity": "db_entry:1"
+        },
+        "_:id6": {
+          "prov:collection": "input:1",
+          "prov:entity": "task_config:1"
+        },
+        "_:id8": {
+          "prov:collection": "output:1",
+          "prov:entity": "task_log:1"
+        },
+        "_:id9": {
+          "prov:collection": "output:1",
+          "prov:entity": "db_entry:2"
+        },
+        "_:id10": {
+          "prov:collection": "output:1",
+          "prov:entity": "product:2"
+        }
+      },
+      "used": {
+        "_:id7": {
+          "prov:activity": "task:1",
+          "prov:entity": "input:1"
+        }
+      },
+      "wasGeneratedBy": {
+        "_:id11": {
+          "prov:entity": "output:1",
+          "prov:activity": "task:1"
+        }
+      }
+    }
+  }
+}

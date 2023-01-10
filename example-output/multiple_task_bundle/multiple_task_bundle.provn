@@ -1,0 +1,54 @@
+document
+  prefix task_type <https://bacardi.dlr.de/prov/ns/task/type/#>
+  prefix task_role <https://bacardi.dlr.de/prov/ns/task/role/#>
+  prefix task_attr <https://bacardi.dlr.de/prov/ns/task/attribute/#>
+  prefix agent <https://bacardi.dlr.de/prov/agent/>
+  prefix task_bundle <https://bacardi.dlr.de/prov/entity/TaskBundle/>
+  prefix task <https://bacardi.dlr.de/prov/activity/Task/>
+  prefix task_config <https://bacardi.dlr.de/prov/entity/TaskConfiguration/>
+  prefix task_log <https://bacardi.dlr.de/prov/entity/TaskLog/>
+  prefix input <https://bacardi.dlr.de/prov/entity/Input/>
+  prefix output <https://bacardi.dlr.de/prov/entity/Output/>
+  prefix db_entry <https://bacardi.dlr.de/prov/entity/DbEntry/>
+  prefix product <https://bacardi.dlr.de/prov/entity/Product/>
+  
+  agent(agent:BACARDI, [prov:type="SoftwareAgent"])
+  agent(agent:GSOC, [prov:type="Organization"])
+  agent(agent:SPACE-TRACK, [prov:type="Organization"])
+  wasAssociatedWith(task:2, agent:BACARDI, -)
+  wasInformedBy(task:2, task:1)
+  bundle task_bundle:1
+    entity(input:1, [prov:type="task_type:Input", prov:type='prov:collection'])
+    entity(output:1, [prov:type="task_type:Output", prov:type='prov:collection'])
+    entity(task_config:1, [prov:type="task_type:TaskConfiguration"])
+    entity(task_log:1, [prov:type="task_type:TaskLog"])
+    entity(db_entry:1, [prov:type="task_type:DbEntry"])
+    entity(db_entry:2, [prov:type="task_type:DbEntry"])
+    entity(product:1, [prov:type="task_type:Product"])
+    activity(task:1, -, -, [prov:type="task_type:Task"])
+    wasAssociatedWith(task:1, agent:BACARDI, -)
+    wasAttributedTo(product:1, agent:SPACE-TRACK)
+    hadMember(input:1, product:1)
+    hadMember(input:1, task_config:1)
+    used(task:1, input:1, -)
+    hadMember(output:1, db_entry:1)
+    hadMember(output:1, db_entry:2)
+    hadMember(output:1, task_log:1)
+    wasGeneratedBy(output:1, task:1, -)
+  endBundle
+  bundle task_bundle:2
+    entity(input:2, [prov:type="task_type:Input", prov:type='prov:collection'])
+    entity(output:2, [prov:type="task_type:Output", prov:type='prov:collection'])
+    entity(product:2, [prov:type="task_type:Product"])
+    entity(task_config:2, [prov:type="task_type:TaskConfiguration"])
+    entity(task_log:2, [prov:type="task_type:TaskLog"])
+    activity(task:2, -, -, [prov:type="task_type:Task"])
+    hadMember(input:2, db_entry:1)
+    hadMember(input:2, task_config:2)
+    used(task:2, input:2, -)
+    hadMember(output:2, product:2)
+    hadMember(output:2, task_log:2)
+    wasGeneratedBy(output:2, task:2, -)
+    wasAttributedTo(product:2, agent:GSOC)
+  endBundle
+endDocument

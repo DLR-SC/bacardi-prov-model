@@ -1,0 +1,87 @@
+<?xml version='1.0' encoding='UTF-8'?>
+<prov:document xmlns:task_type="https://bacardi.dlr.de/prov/ns/task/type/#" xmlns:task_role="https://bacardi.dlr.de/prov/ns/task/role/#" xmlns:task_attr="https://bacardi.dlr.de/prov/ns/task/attribute/#" xmlns:agent="https://bacardi.dlr.de/prov/agent/" xmlns:task_bundle="https://bacardi.dlr.de/prov/entity/TaskBundle/" xmlns:task="https://bacardi.dlr.de/prov/activity/Task/" xmlns:task_config="https://bacardi.dlr.de/prov/entity/TaskConfiguration/" xmlns:task_log="https://bacardi.dlr.de/prov/entity/TaskLog/" xmlns:input="https://bacardi.dlr.de/prov/entity/Input/" xmlns:output="https://bacardi.dlr.de/prov/entity/Output/" xmlns:db_entry="https://bacardi.dlr.de/prov/entity/DbEntry/" xmlns:product="https://bacardi.dlr.de/prov/entity/Product/" xmlns:prov="http://www.w3.org/ns/prov#" xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+  <prov:agent prov:id="agent:BACARDI">
+    <prov:type xsi:type="xsd:string">SoftwareAgent</prov:type>
+  </prov:agent>
+  <prov:agent prov:id="agent:GSOC">
+    <prov:type xsi:type="xsd:string">Organization</prov:type>
+  </prov:agent>
+  <prov:agent prov:id="agent:SPACE-TRACK">
+    <prov:type xsi:type="xsd:string">Organization</prov:type>
+  </prov:agent>
+  <prov:bundleContent prov:id="task_bundle:1">
+    <prov:entity prov:id="input:1">
+      <prov:type xsi:type="xsd:QName">prov:collection</prov:type>
+      <prov:type xsi:type="xsd:string">task_type:Input</prov:type>
+    </prov:entity>
+    <prov:entity prov:id="output:1">
+      <prov:type xsi:type="xsd:QName">prov:collection</prov:type>
+      <prov:type xsi:type="xsd:string">task_type:Output</prov:type>
+    </prov:entity>
+    <prov:entity prov:id="task_config:1">
+      <prov:type xsi:type="xsd:string">task_type:TaskConfiguration</prov:type>
+    </prov:entity>
+    <prov:entity prov:id="task_log:1">
+      <prov:type xsi:type="xsd:string">task_type:TaskLog</prov:type>
+    </prov:entity>
+    <prov:entity prov:id="db_entry:1">
+      <prov:type xsi:type="xsd:string">task_type:DbEntry</prov:type>
+    </prov:entity>
+    <prov:entity prov:id="db_entry:2">
+      <prov:type xsi:type="xsd:string">task_type:DbEntry</prov:type>
+    </prov:entity>
+    <prov:entity prov:id="product:1">
+      <prov:type xsi:type="xsd:string">task_type:Product</prov:type>
+    </prov:entity>
+    <prov:entity prov:id="product:2">
+      <prov:type xsi:type="xsd:string">task_type:Product</prov:type>
+    </prov:entity>
+    <prov:activity prov:id="task:1">
+      <prov:type xsi:type="xsd:string">task_type:Task</prov:type>
+    </prov:activity>
+    <prov:wasAssociatedWith>
+      <prov:activity prov:ref="task:1"/>
+      <prov:agent prov:ref="agent:BACARDI"/>
+    </prov:wasAssociatedWith>
+    <prov:wasAttributedTo>
+      <prov:entity prov:ref="product:1"/>
+      <prov:agent prov:ref="agent:SPACE-TRACK"/>
+    </prov:wasAttributedTo>
+    <prov:wasAttributedTo>
+      <prov:entity prov:ref="product:2"/>
+      <prov:agent prov:ref="agent:GSOC"/>
+    </prov:wasAttributedTo>
+    <prov:hadMember>
+      <prov:collection prov:ref="input:1"/>
+      <prov:entity prov:ref="product:1"/>
+    </prov:hadMember>
+    <prov:hadMember>
+      <prov:collection prov:ref="input:1"/>
+      <prov:entity prov:ref="db_entry:1"/>
+    </prov:hadMember>
+    <prov:hadMember>
+      <prov:collection prov:ref="input:1"/>
+      <prov:entity prov:ref="task_config:1"/>
+    </prov:hadMember>
+    <prov:used>
+      <prov:activity prov:ref="task:1"/>
+      <prov:entity prov:ref="input:1"/>
+    </prov:used>
+    <prov:hadMember>
+      <prov:collection prov:ref="output:1"/>
+      <prov:entity prov:ref="task_log:1"/>
+    </prov:hadMember>
+    <prov:hadMember>
+      <prov:collection prov:ref="output:1"/>
+      <prov:entity prov:ref="db_entry:2"/>
+    </prov:hadMember>
+    <prov:hadMember>
+      <prov:collection prov:ref="output:1"/>
+      <prov:entity prov:ref="product:2"/>
+    </prov:hadMember>
+    <prov:wasGeneratedBy>
+      <prov:entity prov:ref="output:1"/>
+      <prov:activity prov:ref="task:1"/>
+    </prov:wasGeneratedBy>
+  </prov:bundleContent>
+</prov:document>

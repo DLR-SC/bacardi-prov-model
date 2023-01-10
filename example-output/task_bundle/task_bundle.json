@@ -1,0 +1,201 @@
+{
+  "prefix": {
+    "task_type": "https://bacardi.dlr.de/prov/ns/task/type/#",
+    "task_role": "https://bacardi.dlr.de/prov/ns/task/role/#",
+    "task_attr": "https://bacardi.dlr.de/prov/ns/task/attribute/#",
+    "agent": "https://bacardi.dlr.de/prov/agent/",
+    "task_bundle": "https://bacardi.dlr.de/prov/entity/TaskBundle/",
+    "task": "https://bacardi.dlr.de/prov/activity/Task/",
+    "task_config": "https://bacardi.dlr.de/prov/entity/TaskConfiguration/",
+    "task_log": "https://bacardi.dlr.de/prov/entity/TaskLog/",
+    "input": "https://bacardi.dlr.de/prov/entity/Input/",
+    "output": "https://bacardi.dlr.de/prov/entity/Output/",
+    "db_entry": "https://bacardi.dlr.de/prov/entity/DbEntry/",
+    "product": "https://bacardi.dlr.de/prov/entity/Product/"
+  },
+  "agent": {
+    "agent:BACARDI": {
+      "prov:type": "SoftwareAgent"
+    },
+    "agent:GSOC": {
+      "prov:type": "Organization"
+    },
+    "agent:SPACE-TRACK": {
+      "prov:type": "Organization"
+    }
+  },
+  "wasInformedBy": {
+    "_:id1": {
+      "prov:informed": "task:1",
+      "prov:informant": "task:0"
+    }
+  },
+  "bundle": {
+    "task_bundle:1": {
+      "entity": {
+        "input:1": {
+          "prov:type": [
+            {
+              "$": "prov:collection",
+              "type": "prov:QUALIFIED_NAME"
+            },
+            "task_type:Input"
+          ]
+        },
+        "output:1": {
+          "prov:type": [
+            {
+              "$": "prov:collection",
+              "type": "prov:QUALIFIED_NAME"
+            },
+            "task_type:Output"
+          ]
+        },
+        "task_config:1": {
+          "prov:type": "task_type:TaskConfiguration"
+        },
+        "task_log:1": {
+          "prov:type": "task_type:TaskLog"
+        },
+        "db_entry:1": {
+          "prov:type": "task_type:DbEntry"
+        },
+        "db_entry:2": {
+          "prov:type": "task_type:DbEntry"
+        },
+        "product:1": {
+          "prov:type": "task_type:Product"
+        },
+        "product:2": {
+          "prov:type": "task_type:Product"
+        }
+      },
+      "activity": {
+        "task:1": {
+          "prov:type": "task_type:Task"
+        }
+      },
+      "wasAssociatedWith": {
+        "_:id1": {
+          "prov:activity": "task:1",
+          "prov:agent": "agent:BACARDI"
+        }
+      },
+      "wasAttributedTo": {
+        "_:id2": {
+          "prov:entity": "product:1",
+          "prov:agent": "agent:SPACE-TRACK"
+        },
+        "_:id3": {
+          "prov:entity": "product:2",
+          "prov:agent": "agent:GSOC"
+        },
+        "_:id4": {
+          "prov:entity": "task_config:1",
+          "prov:agent": "agent:BACARDI"
+        },
+        "_:id5": {
+          "prov:entity": "db_entry:1",
+          "prov:agent": "agent:BACARDI"
+        },
+        "_:id6": {
+          "prov:entity": "db_entry:2",
+          "prov:agent": "agent:BACARDI"
+        },
+        "_:id7": {
+          "prov:entity": "task_log:1",
+          "prov:agent": "agent:BACARDI"
+        },
+        "_:id8": {
+          "prov:entity": "input:1",
+          "prov:agent": "agent:BACARDI"
+        },
+        "_:id9": {
+          "prov:entity": "output:1",
+          "prov:agent": "agent:BACARDI"
+        }
+      },
+      "used": {
+        "_:id10": {
+          "prov:activity": "task:1",
+          "prov:entity": "input:1"
+        },
+        "_:id18": {
+          "prov:activity": "task:1",
+          "prov:entity": "db_entry:1"
+        },
+        "_:id19": {
+          "prov:activity": "task:1",
+          "prov:entity": "task_config:1"
+        },
+        "_:id20": {
+          "prov:activity": "task:1",
+          "prov:entity": "product:1"
+        }
+      },
+      "wasGeneratedBy": {
+        "_:id11": {
+          "prov:entity": "output:1",
+          "prov:activity": "task:1"
+        },
+        "_:id21": {
+          "prov:entity": "task_log:1",
+          "prov:activity": "task:1"
+        },
+        "_:id22": {
+          "prov:entity": "db_entry:2",
+          "prov:activity": "task:1"
+        },
+        "_:id23": {
+          "prov:entity": "product:2",
+          "prov:activity": "task:1"
+        }
+      },
+      "hadMember": {
+        "_:id12": {
+          "prov:collection": "input:1",
+          "prov:entity": "product:1"
+        },
+        "_:id13": {
+          "prov:collection": "input:1",
+          "prov:entity": "db_entry:1"
+        },
+        "_:id14": {
+          "prov:collection": "input:1",
+          "prov:entity": "task_config:1"
+        },
+        "_:id15": {
+          "prov:collection": "output:1",
+          "prov:entity": "task_log:1"
+        },
+        "_:id16": {
+          "prov:collection": "output:1",
+          "prov:entity": "db_entry:2"
+        },
+        "_:id17": {
+          "prov:collection": "output:1",
+          "prov:entity": "product:2"
+        }
+      },
+      "wasDerivedFrom": {
+        "_:id24": {
+          "prov:generatedEntity": "db_entry:2",
+          "prov:usedEntity": "db_entry:1"
+        }
+      },
+      "wasEndedBy": {
+        "_:id25": {
+          "prov:activity": "task:1",
+          "prov:trigger": "db_entry:1"
+        }
+      }
+    },
+    "task_bundle:2": {
+      "activity": {
+        "task:0": {
+          "prov:type": "task_type:Task"
+        }
+      }
+    }
+  }
+}

@@ -18,8 +18,8 @@ SPDX-License-Identifier: CC0-1.0
   <a href="https://citation-file-format.github.io/">
     <img alt="Badge: Citation File Format Inside" src="https://img.shields.io/badge/-citable%20software-green" target="_blank" />
   </a>
-  <a href="https://zenodo.org/badge/latestdoi/DOI">
-    <img alt="Badge: DOI" src="https://zenodo.org/badge/DOI.svg" target="_blank" />
+  <a href="https://zenodo.org/badge/latestdoi/587256493">
+    <img alt="Badge: DOI" src="https://zenodo.org/badge/587256493.svg" target="_blank" />
   </a>
   <a href="https://twitter.com/dlr_software">
     <img alt="Twitter: DLR Software" src="https://img.shields.io/twitter/follow/dlr_software.svg?style=social" target="_blank" />
@@ -89,7 +89,7 @@ Bibtex entry:
 }
 ```
 
-You can also cite specific releases published on Zenodo: [![DOI](https://zenodo.org/badge/DOI.svg)](https://zenodo.org/badge/latestdoi/DOI)
+You can also cite specific releases published on Zenodo: [![DOI](https://zenodo.org/badge/587256493.svg)](https://zenodo.org/badge/latestdoi/587256493)
 
 ## ✏️ References
 
